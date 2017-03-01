@@ -594,6 +594,7 @@ void CascadeRegressor::LoadCascadeRegressor(std::string ModelName){
 		regressors_[i].LoadRegressor(ModelName, i);
         regressors_[i].ConstructLeafCount();
 	}
+    fin.close();
 }
 
 
@@ -645,6 +646,7 @@ void Regressor::LoadRegressor(std::string ModelName, int stage){
         sprintf(buffer, "%s_%d/%d_linear_y.txt", ModelName.c_str(), stage_, i);
 		linear_model_y_.push_back(load_model(buffer));
 	}
+    fin.close();
 }
 
 void Regressor::ConstructLeafCount(){
@@ -672,6 +674,7 @@ void Regressor::SaveRegressor(std::string ModelName, int stage){
 	for (int i = 0; i < rd_forests_.size(); i++){
 		rd_forests_[i].SaveRandomForest(fout);
 	}
+    fout.close();
 
     for (
          int i = 0; i < linear_model_x_.size(); i++){

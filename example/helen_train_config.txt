@@ -13,9 +13,9 @@ helenModel
 0.08
 0.04
 1
-../example/helen/trainset/
+/home/sooda/data/helen68/trainset/
 ../example/helen_train_images_list.txt
 1
-../example/helen/testset/
+/home/sooda/data/helen68/testset/
 ../example/helen_test_images_list_with_ground_truth.txt
 
