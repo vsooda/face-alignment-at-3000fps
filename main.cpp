@@ -245,18 +245,19 @@ void TrainSelfText(const char* annoName, const char* ModelName, int landmarkNum 
     loadSelfDataFromText(images, ground_truth_shapes, bboxes, file_names, landmarkNum);
 
 	Parameters params;
-    params.local_features_num_ = 300;
+    params.local_features_num_ = 500;
 	params.landmarks_num_per_face_ = landmarkNum;
     params.regressor_stages_ = 6;
-	params.local_radius_by_stage_.push_back(0.4);
-    params.local_radius_by_stage_.push_back(0.3);
-    params.local_radius_by_stage_.push_back(0.2);
-	params.local_radius_by_stage_.push_back(0.1);
+    params.local_radius_by_stage_.push_back(0.29);
+    params.local_radius_by_stage_.push_back(0.21);
+    params.local_radius_by_stage_.push_back(0.16);
+    params.local_radius_by_stage_.push_back(0.12);
     params.local_radius_by_stage_.push_back(0.08);
-    params.local_radius_by_stage_.push_back(0.05);
+    params.local_radius_by_stage_.push_back(0.04);
     params.tree_depth_ = 5;
-    params.trees_num_per_forest_ = 8;
+    params.trees_num_per_forest_ = 12;
     params.initial_guess_ = 5;
+    params.overlap_ = 0.3;
 
 	params.mean_shape_ = GetMeanShape(ground_truth_shapes, bboxes);
 	CascadeRegressor cas_reg;
